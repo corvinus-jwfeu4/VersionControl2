@@ -19,7 +19,6 @@ namespace UserMaintenance
         {
             InitializeComponent();
             label1.Text = Resource1.FullName;
-            label2.Text = Resource1.FirstName;
             button1.Text = Resource1.Add;
 
             listBox1.DataSource = users;
@@ -31,6 +30,14 @@ namespace UserMaintenance
                 FullName = textBox1.Text,
             };
             users.Add(u);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.InitialDirectory = Application.StartupPath;
+            sfd.Filter = "Comma Seperated Values (*.csv)|*.csv";
+            sfd.DefaultExt = "csv";
         }
     }
 }
