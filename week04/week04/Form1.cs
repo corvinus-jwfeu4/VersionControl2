@@ -21,6 +21,8 @@ namespace week04
         {
             InitializeComponent();
             LoadData();
+            CreateExcel();
+            CreateTable();
 
         }
         private void LoadData()
