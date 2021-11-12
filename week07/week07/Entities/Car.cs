@@ -4,24 +4,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using week07.Abstractions;
 
 namespace week07.Entities
 {
-    public class Ball : Toy
+    public class Car : Toy
     {
-
-        public SolidBrush BallColor { get; private set; }
-
-        public Ball(Color color)
-        {
-            BallColor = new SolidBrush(color);
-        }
-
         protected override void DrawImage(Graphics g)
         {
-            g.FillEllipse(BallColor, 0, 0, Width, Height);
+            Image imageFile = Image.FromFile("Images/car.png");
+            g.DrawImage(imageFile, new Rectangle(0, 0, Width, Height));
         }
     }
 }
