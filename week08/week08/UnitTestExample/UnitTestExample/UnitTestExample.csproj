@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E4CE1A5F-B149-4136-9B78-B128DB0ADC94}</ProjectGuid>
+    <ProjectGuid>{F1FBDBB6-FEBA-421B-A647-484ED380E500}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>week08</RootNamespace>
-    <AssemblyName>week08</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>UnitTestExample</RootNamespace>
+    <AssemblyName>UnitTestExample</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstractions\IAccountManager.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Entities\Account.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,24 +59,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTestExample\UnitTestExample\Abstractions\IAccountManager.cs" />
-    <Compile Include="UnitTestExample\UnitTestExample\Controllers\AccountController.cs" />
-    <Compile Include="UnitTestExample\UnitTestExample\Entities\Account.cs" />
-    <Compile Include="UnitTestExample\UnitTestExample\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UnitTestExample\UnitTestExample\Form1.Designer.cs">
+    <Compile Include="Services\AccountManager.cs" />
+    <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UnitTestExample\UnitTestExample\obj\Debug\.NETFramework,Version=v4.6.1.AssemblyAttributes.cs" />
-    <Compile Include="UnitTestExample\UnitTestExample\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="UnitTestExample\UnitTestExample\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="UnitTestExample\UnitTestExample\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
-    <Compile Include="UnitTestExample\UnitTestExample\Program.cs" />
-    <Compile Include="UnitTestExample\UnitTestExample\Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTestExample\UnitTestExample\Properties\Resources.Designer.cs" />
-    <Compile Include="UnitTestExample\UnitTestExample\Properties\Settings.Designer.cs" />
-    <Compile Include="UnitTestExample\UnitTestExample\Services\AccountManager.cs" />
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -81,10 +72,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UnitTestExample\UnitTestExample\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UnitTestExample\UnitTestExample\Properties\Resources.resx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,25 +81,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="UnitTestExample\.vs\UnitTestExample\v16\.suo" />
-    <None Include="UnitTestExample\UnitTestExample\App.config" />
-    <None Include="UnitTestExample\UnitTestExample\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="UnitTestExample\UnitTestExample\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="UnitTestExample\UnitTestExample\obj\Debug\UnitTestExample.csprojAssemblyReference.cache" />
-    <None Include="UnitTestExample\UnitTestExample\Properties\Settings.settings" />
-    <None Include="UnitTestExample\UnitTestExample\UnitTestExample.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="UnitTestExample\UnitTestExample.sln" />
-    <Content Include="UnitTestExample\UnitTestExample\obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
-    <Content Include="UnitTestExample\UnitTestExample\obj\Debug\UnitTestExample.csproj.FileListAbsolute.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UnitTestExample\UnitTestExample\bin\Debug\" />
-    <Folder Include="UnitTestExample\UnitTestExample\bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
